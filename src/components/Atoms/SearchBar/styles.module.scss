@@ -1,0 +1,39 @@
+.searchbarWrapper {
+  display: flex;
+  justify-content: space-between;
+
+  background-color: #ffffff;
+  border: 1px solid #cdcdcd;
+  border-radius: 4px;
+
+  padding: 8px 12px;
+}
+
+.searchInput {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  border: none;
+  border-radius: 4px;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &::placeholder {
+    color: #9e9e9e;
+  }
+}
+
+.searchButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  line-height: 0;
+
+  & > img {
+    width: 24px;
+    height: 24px;
+    margin: auto;
+  }
+}

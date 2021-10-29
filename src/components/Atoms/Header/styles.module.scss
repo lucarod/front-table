@@ -1,0 +1,15 @@
+.headerWrapper {
+  background: #1c1c1c;
+}
+
+.headerContainer {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 12px 32px;
+  line-height: 0;
+
+  > img {
+    width: 120px;
+    height: 35px;
+  }
+}
