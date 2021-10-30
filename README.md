@@ -4,6 +4,10 @@ Uma maneira fácil e intuitiva de visualizar os dados dos funcionários de sua e
 
 <br>
 
+![image](https://user-images.githubusercontent.com/42809136/127918010-79b5d883-df57-4c6d-8a2a-43e220d3c703.png)
+
+<br>
+
 # 🧪 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
@@ -80,8 +84,6 @@ Esta tabela contém as seguintes colunas: Foto, Nome, Cargo, Data de Admissão e
 era necessário ter a possibilidade de realizar uma pesquisa na tabela por um input.
 
 Obs: para acessar o Figma do projeto [clique aqui](https://www.figma.com/file/y9qJNNAckFRL7LNoyNjpv8/Teste---Be-mobile).
-
-![image](https://user-images.githubusercontent.com/42809136/127918010-79b5d883-df57-4c6d-8a2a-43e220d3c703.png)
 
 ## Regras
 
