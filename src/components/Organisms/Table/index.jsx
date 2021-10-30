@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react'
-
-import { api } from '../../../services/api'
+import { useContext } from 'react'
+import { FilterContext } from '../../../contexts/filter'
 
 import styles from './styles.module.scss'
 
@@ -8,13 +7,7 @@ import { TableHead } from '../../Molecules/TableHead'
 import { TableBody } from '../../Molecules/TableBody'
 
 export const Table = () => {
-  const [employees, setEmployees] = useState([])
-
-  useEffect(() => {
-    api.get('employees').then(response => {
-      setEmployees(response.data)
-    })
-  }, [])
+  const { employees } = useContext(FilterContext)
 
   return (
     <table className={styles.tableWrapper}>

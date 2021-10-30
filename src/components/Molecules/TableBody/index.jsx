@@ -4,6 +4,7 @@ import { formatPhone } from '../../../utils'
 import { TableRow } from '../../Atoms/TableRow'
 
 export const TableBody = ({ employees }) => {
+
   return (
     <tbody>
       {employees.map((employee) => {
