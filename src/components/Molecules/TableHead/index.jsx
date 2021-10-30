@@ -4,7 +4,7 @@ import styles from './styles.module.scss'
 
 export const TableHead = () => {
   return (
-    <thead class={styles.tableHeadWrapper}>
+    <thead className={styles.tableHeadWrapper}>
       <TableRow>
         <th>Foto</th>
         <th>Nome</th>

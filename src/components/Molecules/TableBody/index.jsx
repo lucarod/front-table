@@ -1,100 +1,27 @@
+import dayjs from 'dayjs'
+import { formatPhone } from '../../../utils'
+
 import { TableRow } from '../../Atoms/TableRow'
 
-import styles from './styles.module.scss'
-
-export const TableBody = () => {
+export const TableBody = ({ employees }) => {
   return (
     <tbody>
-      <TableRow variant='body'>
-        <td>
-          <img src="https://img.favpng.com/25/7/23/computer-icons-user-profile-avatar-image-png-favpng-LFqDyLRhe3PBXM0sx2LufsGFU.jpg" alt="" />
-        </td>
-        <td>João</td>
-        <td>Back-end</td>
-        <td>00/00/0000</td>
-        <td>+55 (51) 23456-7890</td>
-      </TableRow>
-      <TableRow variant='body'>
-        <td>
-          <img src="https://img.favpng.com/25/7/23/computer-icons-user-profile-avatar-image-png-favpng-LFqDyLRhe3PBXM0sx2LufsGFU.jpg" alt="" />
-        </td>
-        <td>João</td>
-        <td>Back-end</td>
-        <td>00/00/0000</td>
-        <td>+55 (51) 23456-7890</td>
-      </TableRow>
-      <TableRow variant='body'>
-        <td>
-          <img src="https://img.favpng.com/25/7/23/computer-icons-user-profile-avatar-image-png-favpng-LFqDyLRhe3PBXM0sx2LufsGFU.jpg" alt="" />
-        </td>
-        <td>João</td>
-        <td>Back-end</td>
-        <td>00/00/0000</td>
-        <td>+55 (51) 23456-7890</td>
-      </TableRow>
-      <TableRow variant='body'>
-        <td>
-          <img src="https://img.favpng.com/25/7/23/computer-icons-user-profile-avatar-image-png-favpng-LFqDyLRhe3PBXM0sx2LufsGFU.jpg" alt="" />
-        </td>
-        <td>João</td>
-        <td>Back-end</td>
-        <td>00/00/0000</td>
-        <td>+55 (51) 23456-7890</td>
-      </TableRow>
-      <TableRow variant='body'>
-        <td>
-          <img src="https://img.favpng.com/25/7/23/computer-icons-user-profile-avatar-image-png-favpng-LFqDyLRhe3PBXM0sx2LufsGFU.jpg" alt="" />
-        </td>
-        <td>João</td>
-        <td>Back-end</td>
-        <td>00/00/0000</td>
-        <td>+55 (51) 23456-7890</td>
-      </TableRow>
-      <TableRow variant='body'>
-        <td>
-          <img src="https://img.favpng.com/25/7/23/computer-icons-user-profile-avatar-image-png-favpng-LFqDyLRhe3PBXM0sx2LufsGFU.jpg" alt="" />
-        </td>
-        <td>João</td>
-        <td>Back-end</td>
-        <td>00/00/0000</td>
-        <td>+55 (51) 23456-7890</td>
-      </TableRow>
-      <TableRow variant='body'>
-        <td>
-          <img src="https://img.favpng.com/25/7/23/computer-icons-user-profile-avatar-image-png-favpng-LFqDyLRhe3PBXM0sx2LufsGFU.jpg" alt="" />
-        </td>
-        <td>João</td>
-        <td>Back-end</td>
-        <td>00/00/0000</td>
-        <td>+55 (51) 23456-7890</td>
-      </TableRow>
-      <TableRow variant='body'>
-        <td>
-          <img src="https://img.favpng.com/25/7/23/computer-icons-user-profile-avatar-image-png-favpng-LFqDyLRhe3PBXM0sx2LufsGFU.jpg" alt="" />
-        </td>
-        <td>João</td>
-        <td>Back-end</td>
-        <td>00/00/0000</td>
-        <td>+55 (51) 23456-7890</td>
-      </TableRow>
-      <TableRow variant='body'>
-        <td>
-          <img src="https://img.favpng.com/25/7/23/computer-icons-user-profile-avatar-image-png-favpng-LFqDyLRhe3PBXM0sx2LufsGFU.jpg" alt="" />
-        </td>
-        <td>João</td>
-        <td>Back-end</td>
-        <td>00/00/0000</td>
-        <td>+55 (51) 23456-7890</td>
-      </TableRow>
-      <TableRow variant='body'>
-        <td>
-          <img src="https://img.favpng.com/25/7/23/computer-icons-user-profile-avatar-image-png-favpng-LFqDyLRhe3PBXM0sx2LufsGFU.jpg" alt="" />
-        </td>
-        <td>João</td>
-        <td>Back-end</td>
-        <td>00/00/0000</td>
-        <td>+55 (51) 23456-7890</td>
-      </TableRow>
+      {employees.map((employee) => {
+        const formattedDate = dayjs(employee.admission_date).format('DD/MM/YYYY')
+        const { result: formattedPhone, valid: isValid } = formatPhone(employee.phone)
+
+        return (
+          <TableRow key={employee.id} variant='body'>
+            <td>
+              <img src={employee.image} alt={employee.name} />
+            </td>
+            <td>{employee.name}</td>
+            <td>{employee.job}</td>
+            <td>{formattedDate}</td>
+            <td>{isValid ? formattedPhone : "Número Inválido"}</td>
+          </TableRow>
+        )
+      })}
     </tbody>
   )
 }
