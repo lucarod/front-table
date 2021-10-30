@@ -13,3 +13,13 @@
   line-height: 28px;
   font-weight: 500;
 }
+
+@media (max-width: 767px) {
+  .contentHeaderWrapper {
+    flex-direction: column;
+  }
+
+  .title {
+    margin-bottom: 24px;
+  }
+}

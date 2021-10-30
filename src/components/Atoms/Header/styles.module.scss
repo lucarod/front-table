@@ -13,3 +13,9 @@
     height: 35px;
   }
 }
+
+@media (max-width: 767px) {
+  .headerContainer {
+    text-align: center;
+  }
+}

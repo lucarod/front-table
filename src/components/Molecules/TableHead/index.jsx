@@ -4,13 +4,13 @@ import styles from './styles.module.scss'
 
 export const TableHead = () => {
   return (
-    <thead>
+    <thead class={styles.tableHeadWrapper}>
       <TableRow>
-        <td>Foto</td>
-        <td>Nome</td>
-        <td>Cargo</td>
-        <td>Data de Admissão</td>
-        <td>Telefone</td>
+        <th>Foto</th>
+        <th>Nome</th>
+        <th>Cargo</th>
+        <th>Data de Admissão</th>
+        <th>Telefone</th>
       </TableRow>
     </thead>
   )

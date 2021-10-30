@@ -1,8 +1,8 @@
 import styles from './styles.module.scss'
 
-export const TableRow = ({ children }) => {
+export const TableRow = ({ variant, children }) => {
   return (
-    <tr>
+    <tr className={`${variant === "body" && styles.rowBgWhite} ${styles.tableRowWrapper}`}>
       {children}
     </tr>
   )
