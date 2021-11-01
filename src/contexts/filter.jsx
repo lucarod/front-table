@@ -2,7 +2,7 @@ import { createContext, useState, useEffect } from "react";
 
 import { api } from '../services/api'
 
-import { formatEmployees } from '../utils'
+import { formatEmployees, slugify } from '../utils'
 
 export const FilterContext = createContext({})
 
@@ -13,7 +13,8 @@ export const FilterProvider = (props) => {
   function filterEmployees(filterString) {
     const newEmployees = totalEmployees.filter(({ name, job, admission_date, phone }) => {
       const simplifiedPhone = phone.replace(/[^+\d]+/g, "")
-      const rawData = [name, job, admission_date, phone, simplifiedPhone].join(' ').toLowerCase()
+      const sluggedName = slugify(name)
+      const rawData = [sluggedName, job, admission_date, phone, simplifiedPhone].join(' ').toLowerCase()
       return (
         filterString.split(' ').every(item => rawData.includes(item.toLowerCase()))
       )
