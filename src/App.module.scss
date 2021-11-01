@@ -9,3 +9,10 @@
 .emptyMessage {
   text-align: center;
 }
+
+@media screen and (max-width: 991px) {
+  .tableContainer {
+    padding: 0;
+    margin: 16px;
+  }
+}

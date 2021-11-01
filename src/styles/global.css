@@ -8,5 +8,5 @@
 body {
   color: #1c1c1c;
   background: #f0f0f0;
-  height: 100vh;
+  min-height: 100vh;
 }
