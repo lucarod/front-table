@@ -19,6 +19,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Sass](https://sass-lang.com)
 - [JSON-Server](https://github.com/typicode/json-server)
 - [String Mask](https://github.com/the-darc/string-mask)
+- [React Spinner](https://github.com/davidhu2000/react-spinners)
 
 <br>
 
@@ -35,27 +36,19 @@ Tenha instalado em sua máquina as seguintes ferramentas:
 
 ## Rodando a aplicação
 
-Para iniciar o projeto, siga o passo-a-passo abaixo. Caso não tenha familiaridade com o [json-server](https://github.com/typicode/json-server).
+Para iniciar o projeto, siga o passo-a-passo abaixo. 
 
-1. Baixe este projeto em sua máquina
-2. Entre no projeto
-3. Acesse src/services/api e altere o baseURL para localhost:4000
+Os dados estão disponíveis em https://front-table-json-server.herokuapp.com, porém, para obtê-los ao rodar o projeto em modo de desenvolvimento (yarn dev), você deve utilizar o json-server incluído no projeto.
 
-```javascript
-// /src/services/api.js
+Caso não tenha familiaridade com o [json-server](https://github.com/typicode/json-server):
 
-// Mude disso
-export const api = axios.create({
-  baseURL: "https://front-table-json-server.herokuapp.com",
-});
-
-// Para isso
-export const api = axios.create({
-  baseURL: "localhost:4000",
-});
+1. Baixe este projeto em sua máquina ou use o comando abaixo na sua pasta de preferência:
+```bash
+$ git clone https://github.com/lucarod/front-table.git
 ```
 
-4. Salve e execute os comandos abaixo no terminal
+2. Entre no projeto
+3. Execute os comandos abaixo no terminal
 
 ```bash
 # Instalar as dependências
@@ -72,6 +65,18 @@ $ yarn dev
 
 <br>
 
+# 📖 Dev Logs
+
+- Dia 1: Iniciei o desenvolvimento da base do design e estruturação do projeto, ao fim havia terminado todo o HTML e CSS exceto pela estilização da tabela.
+
+- Dia 2: Terminei o CSS da tabela e comecei a escrever a lógica para formatação dos dados. Day.js e String Mask (uma lib bem interessante e pouco conhecida) ajudaram bastante nessa etapa. Comecei a fazer a lógica de filtragem e então comecei o deploy para o Netlify (Front) e Heroku (API). Começou o problema de baseURL, que viria a se repetir mais tarde.
+
+- Dia 3: Comecei com algumas refatorações para melhorar a responsabilidade única de cada componente, fazendo a request dos dados no Contexto de Filtragem e depois enviando para os componentes os dados já formatados. Melhorei a filtragem para um ótimo estado, porém ainda faltavam algumas alterações a serem feitas para ficar mais acessível. Também melhorei a responsividade e UX do projeto. Mais problemas com baseURL me motivaram a querer utilizar variáveis de ambiente.
+
+- Dia 4: Finalmente adicionei suporte a variáveis de ambiente com .env.development e .env.production. Como não são dados sensíveis, estão disponíveis no repositório. Melhorei ainda mais a filtragem, e agora aceita nomes mesmo sem o acento nas letras acentuadas. Adicionei um spinner enquanto os dados estão sendo carregados e, por fim, refatorei o código para uma etapa satisfatória e legível.
+
+<br>
+
 # 📄 Sobre o projeto
 
 \*\* Trecho retirado do README do repositório original
@@ -83,7 +88,7 @@ Nesse teste, foi montada uma tabela com as informações que vem de uma API simu
 Esta tabela contém as seguintes colunas: Foto, Nome, Cargo, Data de Admissão e Telefone, com todos os dados devidamente formatados e apresentados como estava no Figma. Além disso,
 era necessário ter a possibilidade de realizar uma pesquisa na tabela por um input.
 
-Obs: para acessar o Figma do projeto [clique aqui](https://www.figma.com/file/y9qJNNAckFRL7LNoyNjpv8/Teste---Be-mobile).
+Para acessar o Figma do projeto [clique aqui](https://www.figma.com/file/y9qJNNAckFRL7LNoyNjpv8/Teste---Be-mobile).
 
 ## Regras
 
