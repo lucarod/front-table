@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: 'https://front-table-json-server.herokuapp.com',
+  baseURL: import.meta.env.VITE_DATABASE_URL,
 })
