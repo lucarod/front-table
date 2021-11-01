@@ -2,6 +2,8 @@ import { createContext, useState, useEffect } from "react";
 
 import { api } from '../services/api'
 
+import { formatEmployees } from '../utils'
+
 export const FilterContext = createContext({})
 
 export const FilterProvider = (props) => {
@@ -9,16 +11,22 @@ export const FilterProvider = (props) => {
   const [employees, setEmployees] = useState([])
 
   function filterEmployees(filterString) {
-    const newEmployees = totalEmployees.filter((employee) => {
-      return employee.name.toLowerCase().includes(filterString.toLowerCase())
+    const newEmployees = totalEmployees.filter(({ name, job, admission_date, phone }) => {
+      return (
+        name.toLowerCase().includes(filterString.toLowerCase()) ||
+        job.toLowerCase().includes(filterString.toLowerCase()) ||
+        admission_date.toLowerCase().includes(filterString.toLowerCase()) ||
+        phone.toLowerCase().includes(filterString.toLowerCase())
+      )
     })
     setEmployees(newEmployees)
   }
 
   useEffect(() => {
     api.get('employees').then(response => {
-      setTotalEmployees(response.data)
-      setEmployees(response.data)
+      const formattedEmployees = formatEmployees(response.data)
+      setTotalEmployees(formattedEmployees)
+      setEmployees(formattedEmployees)
     })
   }, [])
 
