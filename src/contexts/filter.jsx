@@ -12,11 +12,10 @@ export const FilterProvider = (props) => {
 
   function filterEmployees(filterString) {
     const newEmployees = totalEmployees.filter(({ name, job, admission_date, phone }) => {
+      const simplifiedPhone = phone.replace(/[^+\d]+/g, "")
+      const rawData = [name, job, admission_date, phone, simplifiedPhone].join(' ').toLowerCase()
       return (
-        name.toLowerCase().includes(filterString.toLowerCase()) ||
-        job.toLowerCase().includes(filterString.toLowerCase()) ||
-        admission_date.toLowerCase().includes(filterString.toLowerCase()) ||
-        phone.toLowerCase().includes(filterString.toLowerCase())
+        filterString.split(' ').every(item => rawData.includes(item.toLowerCase()))
       )
     })
     setEmployees(newEmployees)

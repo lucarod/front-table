@@ -30,6 +30,7 @@ export const SearchBar = () => {
         type="text"
         placeholder="Pesquisar"
         value={searchText}
+        autoComplete="off"
       />
       <button className={styles.searchButton} type="submit">
         <img src={searchIcon} alt="" />
