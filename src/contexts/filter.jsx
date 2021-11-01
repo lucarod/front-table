@@ -7,6 +7,7 @@ import { formatEmployees, slugify } from '../utils'
 export const FilterContext = createContext({})
 
 export const FilterProvider = (props) => {
+  const [isLoading, setIsLoading] = useState(true)
   const [totalEmployees, setTotalEmployees] = useState([])
   const [employees, setEmployees] = useState([])
 
@@ -23,15 +24,22 @@ export const FilterProvider = (props) => {
   }
 
   useEffect(() => {
-    api.get('employees').then(response => {
-      const formattedEmployees = formatEmployees(response.data)
-      setTotalEmployees(formattedEmployees)
-      setEmployees(formattedEmployees)
-    })
+    api.get('employees')
+      .then(response => {
+        const formattedEmployees = formatEmployees(response.data)
+        setTotalEmployees(formattedEmployees)
+        setEmployees(formattedEmployees)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+      .finally(() => {
+        setIsLoading(false)
+      })
   }, [])
 
   return (
-    <FilterContext.Provider value={{ employees, filterEmployees }}>
+    <FilterContext.Provider value={{ employees, filterEmployees, isLoading }}>
       {props.children}
     </FilterContext.Provider>
   )

@@ -1,5 +1,8 @@
 import { useContext } from 'react'
 
+import { css } from "@emotion/react";
+import MoonLoader from "react-spinners/MoonLoader";
+
 import { FilterContext } from './contexts/filter'
 
 import { Header } from './components/Atoms/Header'
@@ -8,8 +11,13 @@ import { Table } from './components/Organisms/Table'
 
 import styles from './App.module.scss'
 
+const override = css`
+  display: block;
+  margin: 0 auto;
+`;
+
 function App() {
-  const { employees } = useContext(FilterContext)
+  const { employees, isLoading } = useContext(FilterContext)
 
   return (
     <>
@@ -19,7 +27,16 @@ function App() {
         <div className={styles.tableContainer}>
           <Table />
         </div>
-        {!employees.length &&
+        {
+          isLoading ?
+          <MoonLoader
+            color="#5984c0"
+            loading={isLoading}
+            css={override}
+            size={32}
+            speedMultiplier={1.5}
+          />
+          : !employees.length &&
           <p className={styles.emptyMessage}>Não há dados para exibir que sejam compatíveis com a busca</p>
         }
       </main>
