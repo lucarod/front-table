@@ -32,8 +32,8 @@ export const SearchBar = () => {
         value={searchText}
         autoComplete="off"
       />
-      <button className={styles.searchButton} type="submit">
-        <img src={searchIcon} alt="" />
+      <button className={styles.searchButton}>
+        <img src={searchIcon} alt="Digite sua busca" />
       </button>
     </div>
   )

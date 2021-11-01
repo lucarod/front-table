@@ -10,6 +10,11 @@
   text-align: center;
 }
 
+.loadingSpinner {
+  display: block;
+  margin: 0 auto;
+}
+
 @media screen and (max-width: 991px) {
   .tableContainer {
     padding: 0;

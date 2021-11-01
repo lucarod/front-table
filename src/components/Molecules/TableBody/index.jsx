@@ -4,16 +4,16 @@ export const TableBody = ({ employees }) => {
 
   return (
     <tbody>
-      {employees.map((employee) => {
+      {employees.map(({id, image, name, job, admission_date, phone}) => {
         return (
-          <TableRow key={employee.id} variant='body'>
+          <TableRow key={id} variant='body'>
             <td>
-              <img src={employee.image} alt={employee.name} />
+              <img src={image} alt={name} />
             </td>
-            <td>{employee.name}</td>
-            <td>{employee.job}</td>
-            <td>{employee.admission_date}</td>
-            <td>{employee.phone}</td>
+            <td>{name}</td>
+            <td>{job}</td>
+            <td>{admission_date}</td>
+            <td>{phone}</td>
           </TableRow>
         )
       })}

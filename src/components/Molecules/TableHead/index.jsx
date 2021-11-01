@@ -1,11 +1,9 @@
 import { TableRow } from '../../Atoms/TableRow'
 
-import styles from './styles.module.scss'
-
 export const TableHead = () => {
   return (
-    <thead className={styles.tableHeadWrapper}>
-      <TableRow>
+    <thead>
+      <TableRow variant='head'>
         <th>Foto</th>
         <th>Nome</th>
         <th>Cargo</th>

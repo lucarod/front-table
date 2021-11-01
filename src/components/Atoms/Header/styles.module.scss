@@ -1,5 +1,5 @@
 .headerWrapper {
-  background: #1c1c1c;
+  background: var(--dark);
 }
 
 .headerContainer {
@@ -7,11 +7,11 @@
   margin: 0 auto;
   padding: 12px 32px;
   line-height: 0;
+}
 
-  > img {
-    width: 120px;
-    height: 35px;
-  }
+.logo {
+  width: 120px;
+  height: 35px;
 }
 
 @media (max-width: 767px) {

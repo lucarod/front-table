@@ -13,9 +13,16 @@ export const FilterProvider = (props) => {
 
   function filterEmployees(filterString) {
     const newEmployees = totalEmployees.filter(({ name, job, admission_date, phone }) => {
-      const simplifiedPhone = phone.replace(/[^+\d]+/g, "")
-      const sluggedName = slugify(name)
-      const rawData = [name, sluggedName, job, admission_date, phone, simplifiedPhone].join(' ').toLowerCase()
+      const simplifiedPhone = phone.replace(/[^+\d]+/g, "")  // Removing ( ) and trimming the phone number
+      const sluggedName = slugify(name)                      // Removing accents to make search more flexible
+      const rawData = [
+        name,
+        sluggedName,
+        job,
+        admission_date,
+        phone,
+        simplifiedPhone
+      ].join(' ').toLowerCase()
       return (
         filterString.split(' ').every(item => rawData.includes(item.toLowerCase()))
       )

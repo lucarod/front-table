@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 
-import { css } from "@emotion/react";
+import { css } from "@emotion/react"; // React-Spinners usa emotion, apesar de eu ter utilizado CSS Modules
 import MoonLoader from "react-spinners/MoonLoader";
 
 import { FilterContext } from './contexts/filter'
@@ -11,7 +11,7 @@ import { Table } from './components/Organisms/Table'
 
 import styles from './App.module.scss'
 
-const override = css`
+const spinnerStyle = css`
   display: block;
   margin: 0 auto;
 `;
@@ -32,7 +32,7 @@ function App() {
           <MoonLoader
             color="#5984c0"
             loading={isLoading}
-            css={override}
+            css={spinnerStyle}
             size={32}
             speedMultiplier={1.5}
           />
