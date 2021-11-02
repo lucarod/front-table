@@ -5,16 +5,16 @@
     margin-top: 1px;
   }
 
-  td, th {
-    padding: 15px 32px;
-    white-space: nowrap;
-    text-align: center;
+  td, th, button {
+    font-size: 16px;
     line-height: 18px;
+    text-align: center;
+    white-space: nowrap;
+    padding: 15px 32px;
   }
 
   th:first-child,
-  td:first-child,
-  td:nth-child(2) {
+  td:first-child {
     text-align: left;
   }
 
@@ -27,10 +27,23 @@
 .rowHead {
   background-color: var(--blue);
 
-  th {
+  th, button {
     color: var(--white);
     text-transform: uppercase;
     font-weight: 500;
+    transition: filter 0.3s ease;
+  }
+
+  th:hover {
+    background-color: var(--blue);
+    filter: brightness(1.1);
+  }
+
+  button {
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
   }
 }
 
