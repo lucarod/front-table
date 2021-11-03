@@ -53,13 +53,16 @@ export const filterEmployees = (filterString, totalEmployees) => {
   return filteredEmployees
 }
 
-export const sortEmployees = (sortedField, employees) => {
+export const sortEmployees = (sortedField, employees, sortDirection) => {
+  if (sortDirection === null) {
+    return employees.sort((a, b) => a.id - b.id);
+  }
   const sortedEmployees = employees.sort((a, b) => {
     if (a[sortedField] < b[sortedField]) {
-      return -1;
+      return sortDirection === 'ascending' ? -1 : 1;
     }
     if (a[sortedField] > b[sortedField]) {
-      return 1;
+      return sortDirection === 'ascending' ? 1 : -1;
     }
     return 0;
   })

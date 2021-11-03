@@ -16,9 +16,9 @@ export const FilterProvider = (props) => {
     setEmployees(filteredEmployees)
   }
 
-  function getSortedEmployees(sortedField) {
-    const sortedEmployees = sortEmployees(sortedField, [...employees])
-    const sortedTotalEmployees = sortEmployees(sortedField, totalEmployees)
+  function getSortedEmployees(sortedField, sortDirection) {
+    const sortedEmployees = sortEmployees(sortedField, [...employees], sortDirection)
+    const sortedTotalEmployees = sortEmployees(sortedField, totalEmployees, sortDirection)
     setEmployees(sortedEmployees)
     setTotalEmployees(sortedTotalEmployees)
   }
