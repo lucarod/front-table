@@ -13,6 +13,17 @@ const formatPhone = (phoneNumber) => {
   return StringMask.process(phoneNumber, mask)
 }
 
+const slugify = (value) => {
+  return value
+    .toString()
+    .normalize('NFD') // split an accented letter in the base letter and the acent
+    .replace(/[\u0300-\u036f]/g, '') // remove all previously split accents
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9 ]/g, '') // remove all chars not letters, numbers and spaces (to be replaced)
+    .replace(/\s+/g, ' ') // separator
+}
+
 export const formatEmployees = (employees) => {
   const formattedEmployees = employees.map(({ phone, admission_date, ...data }) => {
     const { result: formattedPhone, valid: isValid } = formatPhone(phone)
@@ -23,13 +34,21 @@ export const formatEmployees = (employees) => {
   return formattedEmployees
 }
 
-export const slugify = (value) => {
-  return value
-    .toString()
-    .normalize('NFD') // split an accented letter in the base letter and the acent
-    .replace(/[\u0300-\u036f]/g, '') // remove all previously split accents
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9 ]/g, '') // remove all chars not letters, numbers and spaces (to be replaced)
-    .replace(/\s+/g, ' ') // separator
+export const filterEmployees = (filterString, totalEmployees) => {
+  const filteredEmployees = totalEmployees.filter(({ name, job, admission_date, phone }) => {
+    const simplifiedPhone = phone.replace(/[^+\d]+/g, "")  // Removing ( ) and trimming the phone number
+    const sluggedName = slugify(name)                      // Removing accents to make search more flexible
+    const rawData = [
+      name,
+      sluggedName,
+      job,
+      admission_date,
+      phone,
+      simplifiedPhone
+    ].join(' ').toLowerCase()
+    return (
+      filterString.split(' ').every(item => rawData.includes(item.toLowerCase()))
+    )
+  })
+  return filteredEmployees
 }
