@@ -54,7 +54,11 @@ export const TableHead = () => {
           </button>
         </th>
         <th>
-          <button type="button" onClick={() => handleSorting('job')}>
+          <button
+            type="button"
+            className={styles.columnName}
+            onClick={() => handleSorting('job')}
+          >
             Cargo
             {
               selectedColumn === 'job' && sortDirection
