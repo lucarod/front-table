@@ -75,6 +75,10 @@ $ yarn dev
 
 - Dia 4: Finalmente adicionei suporte a variáveis de ambiente com .env.development e .env.production. Como não são dados sensíveis, estão disponíveis no repositório. Melhorei ainda mais a filtragem, e agora aceita nomes mesmo sem o acento nas letras acentuadas. Adicionei um spinner enquanto os dados estão sendo carregados e, por fim, refatorei o código para uma etapa satisfatória e legível.
 
+- Dia 5: Criei toda a base para a ordenamento de colunas em uma branch separada para a feature. Tirei o bruto de filtragem e ordenamento dos dados do contexto para a pasta utils, para melhorar a leitura. Ainda há alguns problemas para que filtragem e ordenamento funcionem adequadamente.
+
+- Dia 6: Finalizei a lógica da feature de ordenamento de colunas, com opção de ordem crescente e decrescente com ícones representando tais estados. Comecei a dar os toques finais em refatoração do código. Adaptei melhor o font-size e o padding para dispositivos móveis e então refatorei alguns detalhes da main para ficarem iguais aos da branch. Dia final do projeto, preparo para o envio com esse último log. No geral, desenvolver o projeto foi muito divertido e engajante, dou meus parabéns pela elaboração do teste.
+
 <br>
 
 # 📄 Sobre o projeto
