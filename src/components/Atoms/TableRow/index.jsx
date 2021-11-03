@@ -1,11 +1,11 @@
-import styles from './styles.module.scss'
+import { tableRowWrapper, rowHead, rowBody } from './styles.module.scss'
 
 export const TableRow = ({ variant, children }) => {
   return (
     <tr className={`
-      ${styles.tableRowWrapper}
-      ${variant === "head" && styles.rowHead}
-      ${variant === "body" && styles.rowBody}
+      ${tableRowWrapper}
+      ${variant === "head" && rowHead}
+      ${variant === "body" && rowBody}
     `}>
       {children}
     </tr>

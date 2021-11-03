@@ -6,7 +6,7 @@ import { FilterContext } from '../../../contexts/filter'
 
 import { TableRow } from '../../Atoms/TableRow'
 
-import styles from './styles.module.scss'
+import { columnName, sortIcon } from './styles.module.scss'
 
 export const TableHead = () => {
   const { getSortedEmployees } = useContext(FilterContext)
@@ -15,7 +15,7 @@ export const TableHead = () => {
 
   // Poderia transformar o sorting em um hook
 
-  function handleSorting (sortedField) {
+  function handleSorting(sortedField) {
     const newSortDirection = changeSortDirection(sortedField)
     getSortedEmployees(sortedField, newSortDirection)
     setSortDirection(newSortDirection)
@@ -39,64 +39,64 @@ export const TableHead = () => {
         <th>
           <button
             type="button"
-            className={styles.columnName}
+            className={columnName}
             onClick={() => handleSorting('name')}
           >
             Nome
             {
               selectedColumn === 'name' && sortDirection
-              ? sortDirection === 'ascending'
-                ? <FaSortDown className={styles.sortIcon} />
-                : <FaSortUp className={styles.sortIcon} />
-              : <FaSort className={styles.sortIcon} />
+                ? sortDirection === 'ascending'
+                  ? <FaSortDown className={sortIcon} />
+                  : <FaSortUp className={sortIcon} />
+                : <FaSort className={sortIcon} />
             }
           </button>
         </th>
         <th>
           <button
             type="button"
-            className={styles.columnName}
+            className={columnName}
             onClick={() => handleSorting('job')}
           >
             Cargo
             {
               selectedColumn === 'job' && sortDirection
-              ? sortDirection === 'ascending'
-                ? <FaSortDown className={styles.sortIcon} />
-                : <FaSortUp className={styles.sortIcon} />
-              : <FaSort className={styles.sortIcon} />
+                ? sortDirection === 'ascending'
+                  ? <FaSortDown className={sortIcon} />
+                  : <FaSortUp className={sortIcon} />
+                : <FaSort className={sortIcon} />
             }
           </button>
         </th>
         <th>
           <button
             type="button"
-            className={styles.columnName}
+            className={columnName}
             onClick={() => handleSorting('admission_date')}
           >
             Data de Admissão
             {
               selectedColumn === 'admission_date' && sortDirection
-              ? sortDirection === 'ascending'
-                ? <FaSortDown className={styles.sortIcon} />
-                : <FaSortUp className={styles.sortIcon} />
-              : <FaSort className={styles.sortIcon} />
+                ? sortDirection === 'ascending'
+                  ? <FaSortDown className={sortIcon} />
+                  : <FaSortUp className={sortIcon} />
+                : <FaSort className={sortIcon} />
             }
           </button>
         </th>
         <th>
           <button
             type="button"
-            className={styles.columnName}
+            className={columnName}
             onClick={() => handleSorting('phone')}
           >
             Telefone
             {
               selectedColumn === 'phone' && sortDirection
-              ? sortDirection === 'ascending'
-                ? <FaSortDown className={styles.sortIcon} />
-                : <FaSortUp className={styles.sortIcon} />
-              : <FaSort className={styles.sortIcon} />
+                ? sortDirection === 'ascending'
+                  ? <FaSortDown className={sortIcon} />
+                  : <FaSortUp className={sortIcon} />
+                : <FaSort className={sortIcon} />
             }
           </button>
         </th>
