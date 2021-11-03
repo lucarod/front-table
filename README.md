@@ -32,7 +32,7 @@ Ou, se preferir conferir o projeto em seu computador, siga adiante.
 ## Pré-requisitos
 
 Tenha instalado em sua máquina as seguintes ferramentas:
-[Node.js](https://nodejs.org/en/) e [Yarn](https://yarnpkg.com/).
+[Git](https://git-scm.com/), [Node.js](https://nodejs.org/en/) e [Yarn](https://yarnpkg.com/).
 
 ## Rodando a aplicação
 
