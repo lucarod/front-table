@@ -6,10 +6,11 @@
   }
 
   td, th {
-    padding: 15px 32px;
-    white-space: nowrap;
-    text-align: center;
+    font-size: 16px;
     line-height: 18px;
+    text-align: center;
+    white-space: nowrap;
+    padding: 16px 32px;
   }
 
   th:first-child,
@@ -51,5 +52,25 @@
     border-radius: 50%;
     height: 33px;
     object-fit: cover;
+  }
+}
+
+@media (max-width: 767px) {
+  .tableRowWrapper {
+    td, th {
+      font-size: 14px;
+    }
+  }
+
+  .rowHead {
+    th:first-child {
+      padding: 16px;
+    }
+  }
+
+  .rowBody {
+    td:first-child, td {
+      padding: 8px 16px;
+    }
   }
 }
