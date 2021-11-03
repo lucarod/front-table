@@ -9,11 +9,11 @@ export const SearchBar = () => {
   const notInitialRender = useRef(false)
 
   const [searchText, setSearchText] = useState('')
-  const { filterEmployees } = useContext(FilterContext)
+  const { getFilteredEmployees } = useContext(FilterContext)
 
   useEffect(() => {
     if (notInitialRender.current) {
-      filterEmployees(searchText)
+      getFilteredEmployees(searchText)
     } else {
       notInitialRender.current = true
     }
