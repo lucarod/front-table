@@ -58,10 +58,17 @@ export const sortEmployees = (sortedField, employees, sortDirection) => {
     return employees.sort((a, b) => a.id - b.id);
   }
   const sortedEmployees = employees.sort((a, b) => {
-    if (a[sortedField] < b[sortedField]) {
+    const firstValue = sortedField === 'admission_date'
+      ? a.id
+      : a[sortedField]
+    const secondValue = sortedField === 'admission_date'
+      ? b.id
+      : b[sortedField]
+
+    if (firstValue < secondValue) {
       return sortDirection === 'ascending' ? -1 : 1;
     }
-    if (a[sortedField] > b[sortedField]) {
+    if (firstValue > secondValue) {
       return sortDirection === 'ascending' ? 1 : -1;
     }
     return 0;

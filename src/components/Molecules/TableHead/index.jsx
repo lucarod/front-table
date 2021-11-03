@@ -20,7 +20,6 @@ export const TableHead = () => {
     getSortedEmployees(sortedField, newSortDirection)
     setSortDirection(newSortDirection)
     setSelectedColumn(sortedField)
-    console.log(sortDirection)
   }
 
   function changeSortDirection(sortedField) {
@@ -69,8 +68,38 @@ export const TableHead = () => {
             }
           </button>
         </th>
-        <th>Data de Admissão</th>
-        <th>Telefone</th>
+        <th>
+          <button
+            type="button"
+            className={styles.columnName}
+            onClick={() => handleSorting('admission_date')}
+          >
+            Data de Admissão
+            {
+              selectedColumn === 'admission_date' && sortDirection
+              ? sortDirection === 'ascending'
+                ? <FaSortDown className={styles.sortIcon} />
+                : <FaSortUp className={styles.sortIcon} />
+              : <FaSort className={styles.sortIcon} />
+            }
+          </button>
+        </th>
+        <th>
+          <button
+            type="button"
+            className={styles.columnName}
+            onClick={() => handleSorting('phone')}
+          >
+            Telefone
+            {
+              selectedColumn === 'phone' && sortDirection
+              ? sortDirection === 'ascending'
+                ? <FaSortDown className={styles.sortIcon} />
+                : <FaSortUp className={styles.sortIcon} />
+              : <FaSort className={styles.sortIcon} />
+            }
+          </button>
+        </th>
       </TableRow>
     </thead>
   )
