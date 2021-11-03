@@ -17,7 +17,7 @@ const spinnerStyle = css`
 `;
 
 function App() {
-  const { employees, isLoading } = useContext(FilterContext)
+  const { employees = [], isLoading } = useContext(FilterContext)
 
   return (
     <>

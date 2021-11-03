@@ -1,5 +1,7 @@
 import StringMask from 'string-mask'
 import dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
+dayjs.extend(utc)
 
 const mask = '+99 (00) 90000-0000'
 
@@ -27,7 +29,7 @@ const slugify = (value) => {
 export const formatEmployees = (employees) => {
   const formattedEmployees = employees.map(({ phone, admission_date, ...data }) => {
     const { result: formattedPhone, valid: isValid } = formatPhone(phone)
-    const formattedDate = dayjs(admission_date).format('DD/MM/YYYY')
+    const formattedDate = dayjs.utc(admission_date).format('DD/MM/YYYY')
     const newPhone = isValid ? formattedPhone : 'Número Inválido'
     return { admission_date: formattedDate, phone: newPhone, ...data }
   })
