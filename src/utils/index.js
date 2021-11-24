@@ -53,4 +53,30 @@ export const filterEmployees = (filterString, totalEmployees) => {
     )
   })
   return filteredEmployees
+<<<<<<< HEAD
+=======
+}
+
+export const sortEmployees = (sortedField, employees, sortDirection) => {
+  if (sortDirection === null) {
+    return employees.sort((a, b) => a.id - b.id);
+  }
+  const sortedEmployees = employees.sort((a, b) => {
+    const firstValue = sortedField === 'admission_date'
+      ? a.id
+      : a[sortedField]
+    const secondValue = sortedField === 'admission_date'
+      ? b.id
+      : b[sortedField]
+
+    if (firstValue < secondValue) {
+      return sortDirection === 'ascending' ? -1 : 1;
+    }
+    if (firstValue > secondValue) {
+      return sortDirection === 'ascending' ? 1 : -1;
+    }
+    return 0;
+  })
+  return sortedEmployees
+>>>>>>> feature-column-sorting
 }
