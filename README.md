@@ -1,10 +1,8 @@
-# 💻 Front Table
+# 💻 React Table
 
 Uma maneira fácil e intuitiva de visualizar os dados dos funcionários de sua empresa!
 
 <br>
-
-![image](https://user-images.githubusercontent.com/42809136/127918010-79b5d883-df57-4c6d-8a2a-43e220d3c703.png)
 
 <br>
 
@@ -85,14 +83,12 @@ $ yarn dev
 
 \*\* Trecho retirado do README do repositório original
 
-Este projeto foi desenvolvido para o teste técnico para Desenvolvedor Front-end Júnior da BeMobile.
+Este projeto foi desenvolvido para um teste técnico para Desenvolvedor Front-end Júnior.
 
 Nesse teste, foi montada uma tabela com as informações que vem de uma API simulada escrita em json-server, agora também disponível por meio de um link no Heroku.
 
 Esta tabela contém as seguintes colunas: Foto, Nome, Cargo, Data de Admissão e Telefone, com todos os dados devidamente formatados e apresentados como estava no Figma. Além disso,
 era necessário ter a possibilidade de realizar uma pesquisa na tabela por um input.
-
-Para acessar o Figma do projeto [clique aqui](https://www.figma.com/file/y9qJNNAckFRL7LNoyNjpv8/Teste---Be-mobile).
 
 ## Regras
 
@@ -105,4 +101,4 @@ São avaliados os itens listados abaixo, em ordem de relevância.
 1. Lógica de programação
 2. Organização (código e arquivos)
 3. CSS
-4. README, deve conter pelo menos as seguitnes informações: Sobre, Pré-requisitos, Rodando a aplicação.
+4. README, deve conter pelo menos as seguintes informações: Sobre, Pré-requisitos, Rodando a aplicação.
