@@ -5,11 +5,7 @@
     margin-top: 1px;
   }
 
-<<<<<<< HEAD
-  td, th {
-=======
   td, th:first-child, button {
->>>>>>> feature-column-sorting
     font-size: 16px;
     line-height: 18px;
     text-align: center;
@@ -75,21 +71,13 @@
 
 @media (max-width: 767px) {
   .tableRowWrapper {
-<<<<<<< HEAD
-    td, th {
-=======
     td, th:first-child, button {
->>>>>>> feature-column-sorting
       font-size: 14px;
     }
   }
 
   .rowHead {
-<<<<<<< HEAD
-    th:first-child {
-=======
     th:first-child, button {
->>>>>>> feature-column-sorting
       padding: 16px;
     }
   }

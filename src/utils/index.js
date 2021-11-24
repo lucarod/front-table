@@ -53,8 +53,6 @@ export const filterEmployees = (filterString, totalEmployees) => {
     )
   })
   return filteredEmployees
-<<<<<<< HEAD
-=======
 }
 
 export const sortEmployees = (sortedField, employees, sortDirection) => {
@@ -78,5 +76,4 @@ export const sortEmployees = (sortedField, employees, sortDirection) => {
     return 0;
   })
   return sortedEmployees
->>>>>>> feature-column-sorting
 }
